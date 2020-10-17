@@ -1,226 +1,458 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>开始使用layui</title>
+  <title>中车唐山</title>
   <link rel="stylesheet" href="components/layui/css/layui.css">
 </head>
+
 <body>
 
-<!-- 你的HTML代码 -->
-<div ic="container">
-  <header id="header">
-    <div id="head-container">
-      <div id="corp-img-container" style="margin:20px;padding: 10px">
-        <img src="images/brand.jpg" width="275" height="47">
-      </div>
-      <div id="selector-container" style="margin:20px;padding: 10px">
-        <select id="select-form" style="float:right;" onchange="openPage()">
-          <option value="test">基础通用件数量统计</option>
-          <option value="test">新增基础通用件入库统计</option>
-          <option value="test">基础通用件使用频次统计</option>
-          <option value="test">基础通用使用率统计</option>
-          <option value="test">基础通用统计</option>
-          <option value="test">基础通用使用情况统计</option>
-        </select>
-        <div style="clear:both"></div>
-      </div>
-    </div>
-  </header>
-  <div id="body-container" style="margin: 30px 20px 30px 10px">
-    <div id="tree-container" class="layui-form" style="float: left;border-right: solid;border-right-color: #D3D3D3;width: 15%;height: 800px;">
-      <div id="tree-menu"></div>
-    </div>
-    <div id="page-container" style="float: right;width: 80%;height: 800px;">
-      <div id="page">
-        <div id="form-container">
-          <form class="layui-form" action="">
-  <!--     left form     -->
-            <div id="left-form-container" style="float:left;margin: 50px">
-              <h2 class="layui-form-item">基本属性</h2>
-              <div class="layui-form-item">
-                <label class="layui-form-label">物料组</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">物料描述</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">材质</label>
-                <div class="layui-input-block">
-                  <select name="city" lay-verify="required">
-                    <option value=""></option>
-                    <option value="0">北京</option>
-                    <option value="1">上海</option>
-                    <option value="2">广州</option>
-                    <option value="3">深圳</option>
-                    <option value="4">杭州</option>
-                  </select>
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">材质标准</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">工业标准</label>
-                <div class="layui-input-block">
-                  <select name="city" lay-verify="required">
-                    <option value=""></option>
-                    <option value="0">北京</option>
-                    <option value="1">上海</option>
-                    <option value="2">广州</option>
-                    <option value="3">深圳</option>
-                    <option value="4">杭州</option>
-                  </select>
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">规格型号</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">附加信息</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-            </div>
-  <!--     right form     -->
-            <div id="right-form-container" style="float: left;margin: 50px">
-              <h2 class="layui-form-item">管理属性</h2>
-              <div class="layui-form-item">
-                <label class="layui-form-label">输入框</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">输入框</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">输入框</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">输入框</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-              <div class="layui-form-item">
-                <label class="layui-form-label">输入框</label>
-                <div class="layui-input-inline">
-                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-                </div>
-              </div>
-            </div>
-          </form>
-          <div style="clear:both"></div>
+  <!-- 你的HTML代码 -->
+  <div ic="container">
+    <header id="header">
+      <!-- 页面头部 -->
+      <div id="head-container">
+        <div id="corp-img-container" style="margin:20px;padding: 10px">
+          <img src="images/brand.jpg" width="275" height="47">
         </div>
-        <div id="btn-container" style="width: 200px;height: 200px; margin:0 auto">
-          <button id="btn-confirm" class="layui-btn" >确定</button>
-          <button id="btn-cancel" class="layui-btn">取消</button>
+        <div id="selector-container" style="margin:20px;padding: 10px">
+
+          <div id="radio-container" class='layui-form'>
+            <input type="radio" lay-filter="levelM" name="level" title="标准件" value=1 checked="">
+            <input type="radio" lay-filter="levelM" name="level" title="通用件" value=2>
+            <input type="radio" lay-filter="levelM" name="level" title="原材料" value=3>
+          </div>
+          <select id="select-form" style="float:right;" onchange="openPage()">
+            <option value="test">基础通用件数量统计</option>
+            <option value="test">新增基础通用件入库统计</option>
+            <option value="test">基础通用件使用频次统计</option>
+            <option value="test">基础通用使用率统计</option>
+            <option value="test">基础通用统计</option>
+            <option value="test">基础通用使用情况统计</option>
+          </select>
           <div style="clear:both"></div>
         </div>
       </div>
+    </header>
+    <!-- 页面主体 -->
+    <div id="body-container" style="margin: 30px 20px 30px 10px">
+      <!-- 构建树 -->
+      <div id="tree-container" class="layui-form"
+        style="position:absolute;border-right: solid;border-right-color: #D3D3D3;width: 15%;bottom: 0%;height: 80%;overflow-y: auto;">
+        <div id="tree-menu"></div>
+      </div>
+      <!-- 数据查询和结果相关 -->
+      <div id="page-container" style="float: right;width: 83%;bottom: 0%;">
+        <!-- 数据表单 -->
+        <div id="table-container" style="display: none;">
+          <!-- 数据表单头部 -->
+          <div id="table-head" style="width:100%;height: 20px;">
+            <label style="float:right;" class="layui-form-label">50结果</label>
+            <button id=" " style="float:right;" class="layui-btn layui-btn-danger layui-btn-xs">没有想要的数据？</button>
+            <div style="clear:both"></div>
+          </div>
+          <table style="float:left; width: 100%;" id="test"></table>
+          <!-- 数据表单底部 -->
+          <div id="query-btn-container" style="width: 100%;height: 20px; margin:0 auto">
+            <label style="float:left;" class="layui-form-label">定位到</label>
+            <div style="float:left;width: 50px;" class="layui-input-inline">
+              <input type="tel" name="phone" value="1" autocomplete="off" class="layui-input">
+            </div>
+            <label style="float:left;" class="layui-form-label">/50页</label>
+            <button id="btn-confirm" class="layui-btn">确定</button>
+            <button id="btn-pgup" class="layui-btn">上一页</button>
+            <button id="btn-pgdown" class="layui-btn">下一页</button>
+            <button style="float: right;;" id="btn-back"  onclick='show_query()' class="layui-btn">返回</button>
+            <div style="clear:both"></div>
+          </div>
+        </div>
+        <!-- 基础功能通用相关 -->
+        <div id="page" style="display: none;">
+          <div id="form-container">
+            <form class="layui-form" action="">
+              <!--     left form     -->
+              <div id="left-form-container" style="float:left;margin: 50px">
+                <h2 class="layui-form-item">基本属性</h2>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">物料组</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">物料描述</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">材质</label>
+                  <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                      <option value=""></option>
+                      <option value="0">北京</option>
+                      <option value="1">上海</option>
+                      <option value="2">广州</option>
+                      <option value="3">深圳</option>
+                      <option value="4">杭州</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">材质标准</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">工业标准</label>
+                  <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                      <option value=""></option>
+                      <option value="0">北京</option>
+                      <option value="1">上海</option>
+                      <option value="2">广州</option>
+                      <option value="3">深圳</option>
+                      <option value="4">杭州</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">规格型号</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">附加信息</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+              </div>
+              <!--     right form     -->
+              <div id="right-form-container" style="float: left;margin: 50px">
+                <h2 class="layui-form-item">管理属性</h2>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">输入框</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">输入框</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">输入框</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">输入框</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">输入框</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div style="clear:both"></div>
+          </div>
+          <div id="btn-container" style="width: 200px;height: 90px; margin:0 auto">
+            <button id="btn-confirm" onclick="show_table()" class="layui-btn">确定</button>
+            <button id="btn-cancel" class="layui-btn">取消</button>
+            <div style="clear:both"></div>
+          </div>
+        </div>
+        <!-- 变量查询 -->
+        <div id="query-page" style="">
+          <div id="query-form-container">
+            <form class="layui-form" action="">
+              <!--     left form     -->
+              <div id="query-left-form-container" style="float:left;margin: 50px">
+                <h2 class="layui-form-item">基本属性</h2>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">物料组</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">物料描述</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">材质</label>
+                  <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                      <option value=""></option>
+                      <option value="0">北京</option>
+                      <option value="1">上海</option>
+                      <option value="2">广州</option>
+                      <option value="3">深圳</option>
+                      <option value="4">杭州</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">材质标准</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">工业标准</label>
+                  <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                      <option value=""></option>
+                      <option value="0">北京</option>
+                      <option value="1">上海</option>
+                      <option value="2">广州</option>
+                      <option value="3">深圳</option>
+                      <option value="4">杭州</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">规格型号</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">附加信息</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+              </div>
+              <!--     right form     -->
+              <div id="query-right-form-container" style="float: left;margin: 50px">
+                <h2 class="layui-form-item">管理属性</h2>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">输入框</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                      autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <button id="button_add" type="button" onclick="add_div()" class="layui-btn layui-btn-sm"><i
+                    class="layui-icon">✚</i></button>
+              </div>
+            </form>
+            <div style="clear:both"></div>
+          </div>
+          <div id="query-btn-container" style="width: 200px;height: 90px; margin:0 auto">
+            <button id="query-btn-confirm" onclick="show_table()" class="layui-btn">确定</button>
+            <button id="query-btn-cancel" class="layui-btn">取消</button>
+            <div style="clear:both"></div>
+          </div>
+        </div>
+      </div>
+      <div style="clear:both"></div>
     </div>
-    <div style="clear:both"></div>
+    <footer id="footer"></footer>
   </div>
-  <footer id="footer"></footer>
-</div>
 
-<!--<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>-->
-<script src="./components/jquery-3.5.1.min.js"></script>
-<script src="components/layui/layui.js"></script>
-<script>
-  //一般直接写在一个js文件中
-  layui.use(['layer', 'form', 'tree'], function () {
-    var tree = layui.tree;
-
-    //渲染
-    // var inst1 = tree.render({
-    //   elem: '#tree-menu'  //绑定元素
-    //   , data: [{
-    //     title: '江西' //一级菜单
-    //     , children: [{
-    //       title: '南昌' //二级菜单
-    //       , children: [{
-    //         title: '高新区' //三级菜单
-    //         //…… //以此类推，可无限层级
-    //       }]
-    //     }]
-    //   }, {
-    //     title: '陕西' //一级菜单
-    //     , children: [{
-    //       title: '西安' //二级菜单
-    //     }]
-    //   }]
-    // });
-
-    var inst1 = tree.render({
-      elem: '#tree-menu'  //绑定元素
-      , data: [{
-        title: '<i class="layui-icon layui-icon-template-1"></i>目录',
+  <!--<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>-->
+  <script src="./components/jquery-3.5.1.min.js"></script>
+  <script src="components/layui/layui.js"></script>
+  <script>
+    /* 构件树相关开始 */
+    var inst1;
+    var tree;
+    var data = [{
+      title: '<i class="layui-icon layui-icon-template-1"></i>目录',
+      spread: true,
+      id: 1,
+      children: [{
+        title: '<i class="layui-icon layui-icon-template-1"></i>标准件',
+        id: 11,
         children: [{
-          title: '<i class="layui-icon layui-icon-template-1"></i>标准件',
-          children: [{
-            title: '<i class="layui-icon layui-icon-template-1"></i>IBB螺栓、螺柱',
-            children: [{
-              title: '<i class="layui-icon layui-icon-component"></i>gb_t5728.prj'
-            },{
-              title: '<i class="layui-icon layui-icon-component"></i>gb_t5728.prj'
-            },{
-              title: '<i class="layui-icon layui-icon-component"></i>gb_t5728.prj'
-            },{
-              title: '<i class="layui-icon layui-icon-component"></i>gb_t5728.prj'
-            },{
-              title: '<i class="layui-icon layui-icon-component"></i>gb_t5728.prj'
-            },{
-              title: '<i class="layui-icon layui-icon-component"></i>gb_t5728.prj'
-            }]
-          }]
-        },{
-          title: '<i class="layui-icon layui-icon-template-1"></i>通用件',
-          children: [{
-            title: '<i class="layui-icon layui-icon-template-1"></i>IBB螺栓、螺柱'
-          }]
-        },{
-          title: '<i class="layui-icon layui-icon-template-1"></i>原材料',
-          children: [{
-            title: '<i class="layui-icon layui-icon-template-1"></i>IBB螺栓、螺柱'
-          }]
+          title: '<i class="layui-icon layui-icon-template-1"></i>IBB螺栓、螺柱',
+          children: [],
+          id: 111
+        }]
+      }, {
+        title: '<i class="layui-icon layui-icon-template-1"></i>通用件',
+        id: 12,
+        children: [{
+          title: '<i class="layui-icon layui-icon-template-1"></i>IBB螺栓、螺柱',
+          id: 121,
+          children: []
+        }]
+      }, {
+        title: '<i class="layui-icon layui-icon-template-1"></i>原材料',
+        id: 13,
+        children: [{
+          title: '<i class="layui-icon layui-icon-template-1"></i>IBB螺栓、螺柱',
+          children: [],
+          id: 131,
         }]
       }]
+    }]
+    //初始化图层树
+    layui.use(['layer', 'form', 'tree'], function () {
+      tree = layui.tree;
+      inst1 = tree.render({
+        id: 'tree-menu',
+        elem: '#tree-menu',  //绑定元素
+        data: data,
+        spread: function (obj) {
+          if (obj.data.id > 100) {
+            add(obj.data.id)
+          }
+        }
+      });
     });
-  });
+    var data_child = []
+    for (var i = 0; i < 100; i++) {
+      data_child.push({
+        title: '<i class="layui-icon layui-icon-component"></i>gb_t5728.prj',
+        id: 10 + i
+      })
+    }
+    //重新组装点
+    function add(id) {
+      tree.children('tree-menu', id, data_child)
+    }
+    /* 构件树相关结束 */
+    function openPage() {
+      show_page()
+      /*  $.ajax({
+          type: 'get',
+          url: 'pages/test1.html',
+          async: true,
+          success: function (res) {
+            $("#page-container").replaceWith(res)
+          }
+        })*/
+    }
+    layui.use('table', function () {
+      var table = layui.table;
 
-  function openPage() {
-    $.ajax({
-      type:'get',
-      url:'pages/test1.html',
-      async:true,
-      success:function (res) {
-        $("#page-container").replaceWith(res)
-      }
-    })
-  }
+      //展示已知数据
+      table.render({
+        elem: '#test'
+        , cols: [[ //标题栏
+          { field: 'id', title: 'ID', width: 80 }
+          , { field: 'username', title: '物料分类', width: 80 }
+          , { field: 'email', title: '物料组', minWidth: 80 }
+          , { field: 'sign', title: '物料描述(中文)', minWidth: 80 }
+          , { field: 'sex', title: '材质', width: 80 }
+          , { field: 'city', title: '材质(标准)', width: 80 }
+          , { field: 'experience', title: '工业标准', width: 80 }
+          , { field: '', title: '规格型号', width: 80 }
+          , { field: '', title: '附加信息', minWidth: 80 }
+          , { field: '', title: '物料描述(中文)', minWidth: 80 }
+          , { field: '', title: '历史项目', width: 80 }
+          , { field: '', title: '库存', width: 80 }
+          , { field: '', title: '星级评定', width: 80 }
+          , { field: '', title: '选用次数(搭建BOM选用次数)', width: 80 }
+          , { field: '', title: '供应商', width: 80 }
+          , { field: '', title: '移动平均价', width: 80 }
+          , { field: '', title: '质量特性', width: 80 }
+          , { field: '', title: '国内/国外标准', width: 80 }
+        ]]
+        , data: [{
+          "id": "10001"
+          , "username": "杜甫"
+          , "email": "xianxin@layui.com"
+          , "sex": "男"
+          , "city": "浙江杭州"
+          , "sign": "人生恰似一场修行"
+          , "experience": "116"
+          , "ip": "192.168.0.8"
+          , "logins": "108"
+          , "joinTime": "2016-10-14"
+        }]
+        //,skin: 'line' //表格风格
+        , even: true,
+        // page: true, //是否显示分页
+        height: 'full-320' //高度最大化减去差值
+        //,limits: [5, 7, 10]
+        //,limit: 5 //每页默认显示的数量
+      });
+    });
+    function add_div() {
+      $('#button_add').before(
+        "<div class='layui-form-item'>\
+          <label class='layui-form-label'>输入框</label>\
+          <div class='layui-input-inline'>\
+            <input type='text' name = 'title' required lay-verify='required' placeholder = '请输入标题' autocomplete = 'off' class= 'layui-input' >\
+          </div >\
+        </div >"
+      )
+    }
+    layui.use('form', function () {
+      var form = layui.form;
+      //此处即为 radio 的监听事件
+      form.on('radio(levelM)', function (data) {
+       /* if (data.value === '1') {
+          $('#query-page').show();
+          $('#page').hide();
+          $('#table-container').hide();
+        } else if (data.value === '2') {
+          $('#page').hide();
+          $('#query-page').hide();
+          $('#table-container').show();
+        } else if (data.value === '3') {
+          $('#table-container').hide();
+          $('#query-page').hide();
+          $('#page').show();
+        }*/
+      });
+    });
+    //三页面切换方法
+    //显示表格
+    function show_table() {
+      $('#page').hide();
+      $('#query-page').hide();
+      $('#table-container').show();
+    }
+    //显示查询
+    function show_query() {
+      $('#query-page').show();
+      $('#page').hide();
+      $('#table-container').hide();
 
-</script>
+    }
+    //显示基本功能
+    function show_page() {
+      $('#table-container').hide();
+      $('#query-page').hide();
+      $('#page').show();
+    }
+  </script>
 </body>
+
 </html>
