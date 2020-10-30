@@ -16,6 +16,7 @@
             <div id="head-container">
                 <div id="corp-img-container" style="margin:20px;padding: 10px">
                     <img src="images/brand.jpg" width="275" height="47">
+                    <h1 style="position: absolute;font-weight:600">基础通用件数据资源平台v1.0</h1>
                 </div>
                 <div id="selector-container" style="margin:20px;padding: 10px">
                 </div>
@@ -47,6 +48,8 @@
         <script src="components/layui/layui.js"></script>
         <script src="js/table.js"></script>
         <script>
+            var url = document.URL; //获取当前页面的url
+            console.log(url)
             //初始化结果table
             new nzc_table();
         </script>

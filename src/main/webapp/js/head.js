@@ -36,36 +36,30 @@ nzc_head.prototype.change_radio = function (data) {
 nzc_head.prototype.change_select_form = function (data) {
     console.log(data.value)
     this.select_from = data.value;
-    if (data.value == 0) {
-        $('#query-page').show();
-        $('#page').hide();
-    } else {
-        $('#query-page').hide();
-        $('#page').show();
-        this.showallfrom()
-        switch (data.value) {
-            case '1':
-                $('#wuliaohao').hide();
-                break;
-            case '2':
-                $('#wuliaohao').hide();
-                break;
-            case '3':
-                break;
-            case '4':
-                $('#wuliaohao').hide();
-                $('#end_date').hide();
-                $('#start_date').hide();
-                break;
-            case '5':
-                $('#wuliaohao').hide();
-                break;
-            case '6':
-                break;
-            default:
-                return
-        }
-
+    $('#query-page').hide();
+    $('#page').show();
+    this.showallfrom()
+    switch (data.value) {
+        case '1':
+            $('#mat_number').hide();
+            break;
+        case '2':
+            $('#mat_number').hide();
+            break;
+        case '3':
+            break;
+        case '4':
+            $('#mat_number').hide();
+            $('#end_date').hide();
+            $('#start_date').hide();
+            break;
+        case '5':
+            $('#mat_number').hide();
+            break;
+        case '6':
+            break;
+        default:
+            return
     }
 }
 //点击搜索按钮事件

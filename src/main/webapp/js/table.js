@@ -26,35 +26,35 @@ nzc_table.prototype.init = function () {
             elem: '#result-table'
             , cols: [[ //标题栏
                 { field: 'id', title: 'ID', width: 80 }
-                , { field: 'username', title: '物料分类', width: 80 }
-                , { field: 'email', title: '物料组', minWidth: 80 }
-                , { field: 'sign', title: '物料描述(中文)', minWidth: 80 }
-                , { field: 'sex', title: '材质', width: 80 }
-                , { field: 'city', title: '材质(标准)', width: 80 }
-                , { field: 'experience', title: '工业标准', width: 80 }
-                , { field: '', title: '规格型号', width: 80 }
-                , { field: '', title: '附加信息', minWidth: 80 }
-                , { field: '', title: '物料描述(中文)', minWidth: 80 }
-                , { field: '', title: '历史项目', width: 80 }
-                , { field: '', title: '库存', width: 80 }
-                , { field: '', title: '星级评定', width: 80 }
-                , { field: '', title: '选用次数(搭建BOM选用次数)', width: 80 }
-                , { field: '', title: '供应商', width: 80 }
-                , { field: '', title: '移动平均价', width: 80 }
-                , { field: '', title: '质量特性', width: 80 }
-                , { field: '', title: '国内/国外标准', width: 80 }
+                , { field: 'compClass', title: '物料分类', width: 80 }
+                , { field: 'component', title: '物料组', minWidth: 80 }
+                , { field: 'compDesc', title: '物料描述(中文)', minWidth: 80 }
+                , { field: 'matName', title: '材质', width: 80 }
+                , { field: 'matStandard', title: '材质(标准)', width: 80 }
+                , { field: 'indStandard', title: '工业标准', width: 80 }
+                , { field: 'specMod', title: '规格型号', width: 80 }
+                , { field: 'addInfo', title: '附加信息', minWidth: 80 }
+                , { field: 'location', title: '部位', minWidth: 80 }
+                , { field: 'hxProj', title: '历史项目', width: 80 }
+                , { field: 'inventory', title: '库存', width: 80 }
+                , { field: 'star', title: '星级评定', width: 80 }
+                , { field: 'frequency', title: '选用次数(搭建BOM选用次数)', width: 80 }
+                , { field: 'supplier', title: '供应商', width: 80 }
+                , { field: 'purCycle', title: '移动平均价', width: 80 }
+                , { field: 'eqv', title: '质量特性', width: 80 }
+                , { field: 'intStandard', title: '国内/国外标准', width: 80 }
             ]]
             , data: [{
                 "id": "10001"
-                , "username": "杜甫"
-                , "email": "xianxin@layui.com"
-                , "sex": "男"
-                , "city": "浙江杭州"
-                , "sign": "人生恰似一场修行"
-                , "experience": "116"
-                , "ip": "192.168.0.8"
-                , "logins": "108"
-                , "joinTime": "2016-10-14"
+                , "compClass": "杜甫"
+                , "component": "xianxin@layui.com"
+                , "compDesc": "男"
+                , "matStandard": "浙江杭州"
+                , "indStandard": "人生恰似一场修行"
+                , "addInfo": "116"
+                , "star": "192.168.0.8"
+                , "purCycle": "108"
+                , "intStandard": "2016-10-14"
             }]
             //,skin: 'line' //表格风格
             , even: true,
