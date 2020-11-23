@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>中车唐山</title>
+    <link rel="stylesheet" href="components/layui/css/layui.css">
+</head>
+
+<body>
+    <!-- 你的HTML代码 -->
+    <div ic="container">
+        <header id="header">
+            <!-- 页面头部 -->
+            <div id="head-container">
+                <div id="corp-img-container" style="margin:20px;padding: 10px">
+                    <img src="images/brand.jpg" width="275" height="47">
+                    <h1 style="position: absolute;font-weight:600">基础通用件物料管理平台v1.0</h1>
+                </div>
+                <ul class="layui-nav" lay-filter="login"
+                    style="position: absolute;width: 160px;right: 0%;top: 0%; background-color: #fff;">
+                    <li class="layui-nav-item" lay-unselect="">
+                        <a href="javascript:;" style="color: #000;">张三,欢迎您</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">修改表头</a></dd>
+                            <dd><a href="javascript:;">退出账号</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    </header>
+    <!-- 页面主体 -->
+    <div id="body-container" style="margin: 30px 20px 30px 10px">
+        <!-- 数据查询和结果相关 -->
+        <div id="page-container" style="float: right;width: 100%;bottom: 0%;">
+            <!-- 数据表单 -->
+            <div id="table-container" style="display: block;">
+                <!-- 数据表单头部 -->
+                <div id="table-head" style="width:100%;height: 20px;">
+                    <label style="float:right;" class="layui-form-label">20结果</label>
+                    <button id="no-data" style="float:right;"
+                        class="layui-btn layui-btn-danger layui-btn-xs">没有想要的数据？</button>
+                    <div style="clear:both"></div>
+                </div>
+                <table style="width: 100%;" id="result-table" lay-filter="result-table"></table>
+                <!-- 数据表单底部 -->
+                <div id="query-btn-container" style="width: 100%;height: 20px; margin:0 auto">
+                    <div id="demo7"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="components/jquery-3.5.1.min.js"></script>
+    <script src="components/layui/layui.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/table_data.js"></script>
+    <script src="js/login.js"></script>
+    <script>
+        //var url = document.URL; //获取当前页面的url
+        //console.log(url)
+        var dataJson = JSON.parse(window.localStorage.data);
+        var type = window.localStorage.type * 1;
+
+        console.log(dataJson)
+        console.log(type, '------------------------');
+        if (type == 0 || type == 1 || type == 4) {
+            dataJson.current = 1;
+            dataJson.size = 50;
+        }
+
+        var url = [
+            'http://127.0.0.1:8081/compostats/api/erp/components',//数量
+            'http://127.0.0.1:8081/compostats/api/erp/components',//入库
+            'http://127.0.0.1:8081/compostats/api/hana/usage/detail',//使用频次
+            'http://127.0.0.1:8081/compostats/api/hana/usage/rate',//使用率
+            'http://127.0.0.1:8081/compostats/api/erp/components',//星级
+            'http://127.0.0.1:8081/compostats/api/hana/usage/detail',//使用数量
+        ]
+        //根据传来的type获取url
+        var realUrl = url[type];
+        new nzc_table(table_data,type);
+        $.get(realUrl, dataJson, function (data) {
+            if (type == 0 || type == 1 || type == 4) {
+                data.pages//总页数
+                data.total//数据总条数;
+                data.current//当前页
+                new nzc_table(data.records, type);
+            } else {
+                new nzc_table(data.data, type);
+            }
+        });
+
+        //初始化结果table
+        //new nzc_table(table_data);
+        //初始化登录
+        new nzc_login()
+    </script>
+</body>
+
+</html>
